@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heading Properties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="heading.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div class="box">
+            <div class="box1">
+                <div class="heading1">
+                    <h3>Accordion Heading 1</h3>
+                    <a href=""><i class="fa-solid fa-plus"></i></a>
+                </div>
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, expedita eligendi corrupti voluptas dolorum error quo porro doloremque facere excepturi dolores vero tempora temporibus numquam laboriosam aliquam odio sit nisi.</p>
+            </div>
+            <div class="box1">
+                <div class="heading1">
+                    <h3>Accordion Heading 2</h3>
+                    <a href=""><i class="fa-solid fa-plus"></i></a>
+                </div>
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, expedita eligendi corrupti voluptas dolorum error quo porro doloremque facere excepturi dolores vero tempora temporibus numquam laboriosam aliquam odio sit nisi.</p>
+            </div>
+            <div class="box1">
+                <div class="heading1">
+                    <h3>Accordion Heading 3</h3>
+                    <a href=""><i class="fa-solid fa-plus"></i></a>
+                </div>
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, expedita eligendi corrupti voluptas dolorum error quo porro doloremque facere excepturi dolores vero tempora temporibus numquam laboriosam aliquam odio sit nisi.</p>
+            </div>
+            <div class="box1">
+                <div class="heading1">
+                    <h3>Accordion Heading 4</h3>
+                    <a href=""><i class="fa-solid fa-plus"></i></a>
+                </div>
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, expedita eligendi corrupti voluptas dolorum error quo porro doloremque facere excepturi dolores vero tempora temporibus numquam laboriosam aliquam odio sit nisi.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // let anchor=document.querySelectorAll('a')
+        let plus=document.querySelectorAll('.heading1 a i')
+        for (let i=0;i<plus.length; i++){
+            plus[i].onclick=function(e){
+                e.preventDefault()
+                let para=plus[i].parentElement.parentElement.nextElementSibling
+                if(para.classList.contains('active')){
+                    console.log(plus[i].parentElement.parentElement.nextElementSibling);
+                    // let children=plus[i].parentElement.parentElement.nextElementSibling
+                    // children.style.display='block'
+                    para.classList.remove('active')
+                    plus[i].classList.add('fa-plus')
+                    plus[i].classList.remove('fa-minus')
+                }
+                else{
+                    para.classList.add('active')
+                    plus[i].classList.remove('fa-plus')
+                    plus[i].classList.add('fa-minus')
+                }
+                
+            }
+        }
+
+    </script>
+</body>
+</html>
